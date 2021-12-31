@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner">
+        <video autoplay muted loop>
+            <source src="fireworks loop.mp4" type="video/mp4">
+        </video>
+        <div class="card">
+            <div class="headimg">Happy New Year</div>
+            <img src="Foton.jpg" alt="">
+            <h2>Happy New Year !!!</h2>
+            <h2>Nury Rachma Dhiani</h2>
+            <br><br>
+            <button>Click Me!</button>
+        </div>
+    </div>
+<!-- TILT -->
+<script src="vanila tilt js/tiltjs.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".card"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 0.8,
+        gyroscope: true,
+        gyroscopeMinAngleX: -22,
+        gyroscopeMaxAngleX: 22,
+        gyroscopeMaxAngleY: 22,
+        gyroscopeMinAngleY: -22
+
+	});
+</script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+    gsap.from(".card", {duration: 1.8, y: -1000, delay:0.5, ease: "bounce.out"});
+</script>
+
+<!-- Sweet Alert -->
+<script src="dist/sweetalert2.all.min.js"></script>
+<script>
+    const tombol = document.querySelector('button');
+    tombol.addEventListener('click', function(){
+        Swal.fire({
+        title: 'Haloo..Nury, gimana? desain nya terlalu norak ya ?hahhaha..., kalok udah lihat ini wajib kasih kritik & saran loh..!! maaf asal pakek foto adikmu hohoho',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("https://sweetalert2.github.io/images/nyan-cat.gif")
+            left top
+            no-repeat`
+        });
+    });
+</script>
+
+</body>
+</html>
